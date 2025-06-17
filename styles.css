@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Source Sans 3", sans-serif;
+    background-color: #F7F5F0;
+}
+
+header {
+    background-color: transparent;
+    padding: 15px 40px;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+}
+
+#brand-name {
+    font-family: "Poppins", sans-serif;
+    color: #ffffff; 
+    font-weight: 700;
+    font-size: 1.2em;
+    & span {
+        color: #175B73;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url(assets/images/hero.png) no-repeat center center/cover;
+    justify-content: center; /* Mantenha para centralizar VERTICALMENTE */
+  
+    
+    /* REMOVA OS PADDINGS ANTIGOS DAQUI SE ESTIVEREM CONFLITANDO */
+    /* E use os seguintes para controlar o espaçamento geral da seção Hero: */
+    padding: 0 40px; /* Padding lateral alinhado com o header */
+    padding-top: 100px; /* IMPORTANTE: Adiciona espaço no topo para o conteúdo do hero não ficar por trás do header */
+    padding-bottom: 50px; /* Adiciona um padding na parte de baixo para garantir que o conteúdo não fique "colado" no fundo */
+
+    position: relative;
+    z-index: 1;
+
+    & h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 2.3em;
+        margin-bottom: 25px;
+        text-align: left;
+        color: #ffffff;
+        
+    }
+    & button {
+    background-color: #D4AF37; /* Dourado para o botão */
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px; /* Cantos levemente arredondados */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Para o botão se ajustar ao conteúdo */
+}
+
+    & button a {
+    text-decoration: none;
+    color: #175B73; 
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.1em;
+    display: block; 
+}
+
+    & button:hover {
+    background-color: #e0b440; 
+    transform: translateY(-2px); 
+}
+}
+section {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h2 {
+    font-family: "Poppins";
+    font-weight: 600;
+    color: #D4AF37;
+    margin-top: 24px;
+    margin-bottom: 12px;
+
+}
+ 
+p {
+    font-weight: 400;
+    color: #5A5A5A;
+}
+
+
+.card {
+  background: #f7f5f0;
+  border-radius: 12px;
+  padding: 16px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 245px;
+  position: relative;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  
+  & h3 {
+    color: #175B73;
+  }
+  & button {
+        background-color: #D4AF37;
+        border: none;
+        text-align: center;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        display: block; /* MUDE AQUI: De 'inline-block' para 'block' para ocupar 100% da largura disponível */
+        width: 100%; /* ADICIONE AQUI: Ocupa 100% da largura do seu pai (o cards-container, ou um div que o envolva) */
+        padding: 15px 30px; /* Mantém o padding do botão */
+    }
+
+    & button a {
+        text-decoration: none;
+        color: #ffffff; 
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 1.1em;
+        display: block; 
+    }
+}
+
+.cards-container {
+    display: flex; /* Transforma o contêiner em um Flexbox */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os cards no contêiner */
+    gap: 24px; /* <--- ADICIONE ESTE VALOR PARA AUMENTAR O ESPAÇO ENTRE OS CARDS */
+    padding: 20px 0; /* Padding vertical para espaçar dos títulos/textos da seção */
+
+    
+}
