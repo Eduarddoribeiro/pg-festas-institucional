@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -232,46 +233,43 @@ h4 {
         padding: 15px 30px; /* Mantém o padding do botão */
     }
 
-    select {
-    /* Aparência geral */
-    width: 100%; /* Ou uma largura específica */
-    padding: 10px 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px; /* Cantos arredondados */
-    background-color: #fff;
-    font-family: 'Arial', sans-serif; /* Fonte legível */
-    font-size: 16px;
-    color: #333;
-    -webkit-appearance: none; /* Remove o estilo padrão do Chrome/Safari */
-    -moz-appearance: none;    /* Remove o estilo padrão do Firefox */
-    appearance: none;         /* Remove o estilo padrão */
+    .card-trabalhe-conosco select { /* Aplica o estilo ao select dentro do card */
+        color: #5A5A5A;
+    background-color: #F7F5F0;
+    text-align: left; /* O texto da opção selecionada alinhado à esquerda */
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
 
-    /* Adiciona uma seta personalizada */
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2C197.973L146.2%2C38.425L5.4%2C197.973H287z%22%2F%3E%3C%2Fsvg%3E');
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid #cccccc33;
+    border-radius: 12px;
+    box-sizing: border-box; /* Essencial para o padding e borda não estourarem a largura */
+
+    /* --- ESTILOS ESPECÍFICOS PARA O SELECT --- */
+    -webkit-appearance: none; /* Remove a seta padrão do Chrome/Safari */
+    -moz-appearance: none;    /* Remove a seta padrão do Firefox */
+    appearance: none;         /* Remove a seta padrão para outros navegadores */
+
+    /* Adiciona uma seta personalizada (opcional, mas recomendado para consistência) */
+    /* Você pode ajustar a cor do SVG para combinar com seu design */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333333%22%20d%3D%22M287%2C197.973L146.2%2C38.425L5.4%2C197.973H287z%22%2F%3E%3C%2Fsvg%3E');
     background-repeat: no-repeat;
-    background-position: right 10px center;
+    background-position: right 10px center; /* Posição da seta */
     background-size: 12px; /* Tamanho da seta */
 
-    /* Efeitos de foco e hover */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
+    /* Estilo para quando o select está em foco */
+    &:focus {
+        outline: none; /* Remove o contorno padrão do navegador */
+        border-color: #A0D0FF; /* Uma cor de destaque ao focar, similar a um input */
+        box-shadow: 0 0 0 2px rgba(160, 208, 255, 0.5); /* Sombra suave ao focar */
+    }
 
-select:hover {
-    border-color: #888;
-}
-
-select:focus {
-    border-color: #007bff; /* Cor azul ao focar */
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
-    outline: none; /* Remove o contorno padrão do navegador */
-}
-
-/* Estilo para a opção placeholder */
-option[value=""] {
-    color: #999;
-}
-
-/* Estilo para as opções (limitado) */
-option {
-    padding: 8px 15px;
+    /* Estilo para a primeira opção (placeholder) */
+    & option[value=""] {
+        color: #888; /* Uma cor mais clara para o placeholder */
+    }
 }
