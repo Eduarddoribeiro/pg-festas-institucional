@@ -273,3 +273,86 @@ h4 {
         color: #888; /* Uma cor mais clara para o placeholder */
     }
 }
+
+footer {
+    background-color: #f7f5f0; /* Usando seu azul principal como fundo */
+    color: #5A5A5A; /* Texto branco para contraste */
+    padding: 20px 20px 0 20px; /* Espaçamento interno: 50px no topo, 20px nas laterais, 0 embaixo (o footer-bottom cuidará disso) */
+    font-family: "Source Sans 3", sans-serif;
+}
+
+#footer-content {
+    display: flex;
+    flex-direction: column; /* Em mobile, as seções ficam empilhadas */
+    gap: 40px; /* Espaço entre as seções */
+    text-align: center; /* Centraliza o texto em mobile */
+    margin-bottom: 40px;
+}
+
+.footer-section h4 {
+    font-family: "Poppins", sans-serif;
+    color: #5C3A00; /* Usando sua cor dourada para os títulos, como no resto do site */
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Estilos para os links e parágrafos do rodapé */
+footer p, footer li {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #5A5A5A;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #5c3a00b7; /* Efeito hover dourado */
+}
+
+/* Ajustes na lista de navegação */
+.footer-links ul {
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0;
+    margin: 0;
+}
+
+/* Ícones de Contato e Redes Sociais */
+.footer-section img {
+    width: 20px; /* Tamanho padrão para os ícones */
+    height: auto;
+    margin-right: 8px;
+    vertical-align: middle; /* Alinha o ícone com o texto */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones em mobile */
+    gap: 20px; /* Espaço entre os ícones */
+}
+
+.social-icons a img {
+    width: 24px; /* Ícones sociais um pouco maiores */
+    transition: transform 0.2s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1); /* Efeito de zoom no hover */
+}
+
+
+/*Copyright*/
+#footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória sutil */
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#footer-bottom p {
+    margin: 5px 0;
+}
