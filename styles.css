@@ -86,14 +86,18 @@ nav {
 section {
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 64px;
+    padding-top: 24px;
+    & img {
+        width: 100%;
+    }
 }
 
 h2 {
     font-family: "Poppins";
     font-weight: 600;
     color: #D4AF37;
-    margin-top: 24px;
-    margin-bottom: 12px;
+    
 
 }
  
@@ -102,7 +106,24 @@ p {
     color: #5A5A5A;
 }
 
+.descricao {
+    padding-bottom: 20px;
+    padding-top: 12px;
+}
 
+.descricao-branca {
+    color: #ffffff;
+    padding-bottom: 20px;
+    padding-top: 12px;
+}
+.descricao-foto {
+    padding-bottom: 12px;
+}
+
+.background-azul {
+    background-color: #175B73;
+    
+}
 .card {
   background: #f7f5f0;
   border-radius: 12px;
@@ -147,7 +168,110 @@ p {
     flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
     justify-content: center; /* Centraliza os cards no contêiner */
     gap: 24px; /* <--- ADICIONE ESTE VALOR PARA AUMENTAR O ESPAÇO ENTRE OS CARDS */
-    padding: 20px 0; /* Padding vertical para espaçar dos títulos/textos da seção */
+    padding: 0px 0; /* Padding vertical para espaçar dos títulos/textos da seção */
 
     
+}
+h4 {
+    padding-top: 10px;
+    color: #5C3A00;
+}
+.card-trabalhe-conosco {
+  background: #f7f5f0;
+  border-radius: 12px;
+  padding: 16px 10px 12px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  height: 336px;
+  position: relative;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  & h5 {
+    color: #d4af37;
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+  }
+}
+
+.card-trabalhe-conosco input { /* <-- ESTA É A MUDANÇA ESSENCIAL */
+  background-color: #F7F5F0;
+  text-align: left;
+  font-family: "Poppins", sans-serif; /* Ajustado de "Poppins-Medium" */
+  font-size: 12px;
+  font-weight: 500;
+  /* position: relative; (Removido, pois não é visível sem top/left/etc.) */
+
+  /* Adicione estes estilos comuns para inputs para um bom visual e usabilidade */
+  width: 100%; /* Para ocupar a largura total do pai */
+  padding: 10px; /* Espaçamento interno */
+  margin-bottom: 12px; /* Espaçamento entre os inputs */
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+  border: 1px solid #cccccc33; /* Borda leve */
+  border-radius: 12px; /* Cantos arredondados */
+  box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
+}
+
+.btn-enviar {
+        background-color: #00BE65;
+        color: #ffffff;
+        border: none;
+        font-family: "Poppins";
+        text-align: center;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        display: block; /* MUDE AQUI: De 'inline-block' para 'block' para ocupar 100% da largura disponível */
+        width: 100%; /* ADICIONE AQUI: Ocupa 100% da largura do seu pai (o cards-container, ou um div que o envolva) */
+        padding: 15px 30px; /* Mantém o padding do botão */
+    }
+
+    select {
+    /* Aparência geral */
+    width: 100%; /* Ou uma largura específica */
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Cantos arredondados */
+    background-color: #fff;
+    font-family: 'Arial', sans-serif; /* Fonte legível */
+    font-size: 16px;
+    color: #333;
+    -webkit-appearance: none; /* Remove o estilo padrão do Chrome/Safari */
+    -moz-appearance: none;    /* Remove o estilo padrão do Firefox */
+    appearance: none;         /* Remove o estilo padrão */
+
+    /* Adiciona uma seta personalizada */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2C197.973L146.2%2C38.425L5.4%2C197.973H287z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px; /* Tamanho da seta */
+
+    /* Efeitos de foco e hover */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:hover {
+    border-color: #888;
+}
+
+select:focus {
+    border-color: #007bff; /* Cor azul ao focar */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none; /* Remove o contorno padrão do navegador */
+}
+
+/* Estilo para a opção placeholder */
+option[value=""] {
+    color: #999;
+}
+
+/* Estilo para as opções (limitado) */
+option {
+    padding: 8px 15px;
 }
