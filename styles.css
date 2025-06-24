@@ -39,9 +39,18 @@ nav {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: url(assets/images/hero.png) no-repeat center center/cover;
-    justify-content: center; /* Mantenha para centralizar VERTICALMENTE */
-  
+    justify-content: center;
+    padding: 100px 40px 50px;
+    position: relative;
+    z-index: 1;
+
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.7)),
+        url('assets/images/hero.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
     
     /* REMOVA OS PADDINGS ANTIGOS DAQUI SE ESTIVEREM CONFLITANDO */
     /* E use os seguintes para controlar o espaçamento geral da seção Hero: */
@@ -54,7 +63,7 @@ nav {
 
     & h1 {
         font-family: "Poppins", sans-serif;
-        font-size: 2.3em;
+        font-size: 2.1em;
         margin-bottom: 25px;
         text-align: left;
         color: #ffffff;
@@ -356,3 +365,4 @@ footer a:hover {
 #footer-bottom p {
     margin: 5px 0;
 }
+

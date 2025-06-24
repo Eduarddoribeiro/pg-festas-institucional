@@ -1,0 +1,136 @@
+
+@media (min-width: 768px) {
+.container {
+        max-width: 720px;
+    }
+
+    #hero {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.7)),
+        url('assets/images/hero-tablet.webp'); 
+    }
+
+    #hero h1 {
+        font-size: 3.5em;
+    }
+
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    /* Layout dos cards para 2 colunas */
+    .card {
+        flex: 0 1 calc(50% - 12px); /* 0 para não crescer, 1 para encolher, e a base de largura */
+        max-width: none;
+    }
+
+    #footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+    }
+
+}
+
+@media (min-width: 992px) {
+    header {
+    padding: 15px 80px;
+    
+}
+#brand-name {
+    font-weight: 700;
+    font-size: 1.8em;
+    & span {
+        color: #175B73;
+    }
+}
+
+#hero {
+    padding-left: 80px;
+    padding-right: 180px;
+    align-items: flex-start;
+    background: url(assets/images/hero-tablet.webp) no-repeat center center/cover;
+
+    & h1 {
+        font-size: 3.8em;
+        margin-bottom: 25px;
+        text-align: left;
+        color: #ffffff;
+        
+    }
+    & button {
+    width: auto;
+    max-width: 400px;
+}
+
+    & button a {
+    font-size: 2.5em; 
+} }
+
+.card-foto img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+}
+
+@media (min-width: 1200px) {
+  header {
+    padding: 20px 120px;
+  }
+
+  #hero {
+    padding-left: 120px;
+    padding-right: 1000px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.7)),
+    url(assets/images/hero-pc.webp); /* se você tiver uma imagem específica para desktop */
+  }
+
+  #hero h1 {
+    font-size: 3.9sem;
+  }
+
+  #hero button a {
+    font-size: 2.8em;
+  }
+
+  .cards-container {
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .card {
+    flex: 0 1 calc(25% - 24px); /* 4 colunas se couberem */
+  }
+
+  .card-foto {
+    flex: 0 1 calc(25% - 24px);
+  }
+
+  .container-portfolio {
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 32px;
+  }
+
+  .card-trabalhe-conosco {
+    width: 50%;
+  }
+
+  #footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 80px;
+  }
+
+  footer {
+    padding: 60px 120px 0 120px;
+  }
+}
