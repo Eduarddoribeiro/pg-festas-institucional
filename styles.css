@@ -209,7 +209,7 @@ h4 {
   background-color: #F7F5F0;
   text-align: left;
   font-family: "Poppins", sans-serif; /* Ajustado de "Poppins-Medium" */
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 500;
   /* position: relative; (Removido, pois não é visível sem top/left/etc.) */
 
@@ -242,7 +242,7 @@ h4 {
     background-color: #F7F5F0;
     text-align: left; /* O texto da opção selecionada alinhado à esquerda */
     font-family: "Poppins", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
 
     width: 100%;
