@@ -53,7 +53,7 @@
     padding-left: 80px;
     padding-right: 180px;
     align-items: flex-start;
-    background: url(assets/images/hero-tablet.webp) no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.7)), url(assets/images/hero-tablet.webp) no-repeat center center/cover;
 
     & h1 {
         font-size: 3.8em;
@@ -82,55 +82,161 @@
 }
 
 @media (min-width: 1200px) {
-  header {
-    padding: 20px 120px;
+  #main-wrapper {
+    text-align: center;
+  } 
+  p {
+    font-size: 1.2em;
   }
-
   #hero {
+    display: flex;
+    flex-direction: column;      /* empilha h1 e botão */
+    justify-content: center;     /* centraliza verticalmente */
+    align-items: center;         /* centraliza horizontalmente */
+    height: 100vh;               /* ocupa toda altura da tela */
     padding-left: 120px;
-    padding-right: 1000px;
+    padding-right: 200px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.7)),
-    url(assets/images/hero-pc.webp); /* se você tiver uma imagem específica para desktop */
+      url(assets/images/hero-pc.webp);
+    background-size: cover;
+    background-position: center;
+    text-align: center;          /* texto centralizado */
   }
 
   #hero h1 {
-    font-size: 3.9sem;
+    max-width: 700px;           /* limita largura para não esticar demais */
+    font-size: 3em;           /* corrigi a unidade (sem -> em) */
+    margin-bottom: 20px;   
+    text-align: center;     /* espaço entre o título e o botão */
   }
 
-  #hero button a {
-    font-size: 2.8em;
+ #hero button {
+  padding: 25px 25px;       /* altura e largura internas do botão */
+     /* herda do link, evita conflito */
+   /* cor de fundo (exemplo) */
+  display: inline-block;
+  max-width: 450px;         /* já tinha no seu código */
+  height: auto;             /* remove altura fixa */
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+#hero button a {
+  font-size: 2em;
+  padding: 0;          }
+
+.cards-container {
+    display: flex;
+    flex-wrap: nowrap; /* garante que fique tudo em uma linha só */
+    gap: 24px; /* espaçamento entre os cards */
+    justify-content: center; /* ou flex-start, se quiser alinhado à esquerda */
   }
 
-  .cards-container {
-    justify-content: space-between;
-    gap: 40px;
+  .cards-container .card {
+    flex: 1 1 0; /* os cards vão crescer igualmente */
+     max-width: 100%;
+    min-height: 400px; 
+  }
+     #contato {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    text-align: left;
+    padding: 0px 80px;
   }
 
-  .card {
-    flex: 0 1 calc(25% - 24px); /* 4 colunas se couberem */
-  }
-
-  .card-foto {
-    flex: 0 1 calc(25% - 24px);
-  }
-
-  .container-portfolio {
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 32px;
+  #contato .descricao-branca {
+    max-width: 400px;
+    flex: 1;
+    text-align: left;
   }
 
   .card-trabalhe-conosco {
-    width: 50%;
+    max-width: 450px;
+    min-height: 450px;
+    flex: 1;
+    background-color: #f7f5f0;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
 
-  #footer-content {
+  .card-trabalhe-conosco input,
+  .card-trabalhe-conosco select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+
+  .card-trabalhe-conosco button {
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+   #footer-content {
+    display: flex;
+    justify-content: space-between; /* distribui as seções igualmente */
+    align-items: flex-start;
+    gap: 40px; /* espaço entre as seções */
+    padding: 40px 80px; /* menos espaçamento que o padrão */
+    max-width: 1200px;
+    margin: 0 auto; /* centraliza horizontalmente */
+  }
+
+  #footer-content .footer-section {
+    flex: 1 1 0;
+    min-width: 200px; /* garante largura mínima das colunas */
+  }
+
+  /* Ajusta títulos e listas para compactar um pouco */
+  #footer-content h4 {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  #footer-content p,
+  #footer-content ul {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+
+  #footer-content ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  #footer-content ul li {
+    margin-bottom: 6px;
+  }
+
+  #footer-bottom {
+    padding: 15px 80px;
+    font-size: 0.9rem;
+    text-align: center;
+    border-top: 1px solid #ddd;
     max-width: 1200px;
     margin: 0 auto;
-    gap: 80px;
   }
+  #quem-somos .descricao,
+#nossos-servicos .descricao-branca,
+#portfolio .descricao {
+  max-width: 900px;
+  margin: 0 auto 30px auto; /* essa linha é chave */
+  font-size: 1.1rem;
+  text-align: center;
+}
+#quem-somos .cards-container,
+#nossos-servicos .cards-container,
+#portfolio .container-portfolio {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
 
-  footer {
-    padding: 60px 120px 0 120px;
-  }
+
 }

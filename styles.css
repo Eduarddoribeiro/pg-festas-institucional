@@ -6,7 +6,7 @@
 
 body {
     font-family: "Source Sans 3", sans-serif;
-    background-color: #F7F5F0;
+    background-color: #f7f5f0;
 }
 
 header {
@@ -67,13 +67,13 @@ nav {
         margin-bottom: 25px;
         text-align: left;
         color: #ffffff;
-        
+         text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     }
     & button {
     background-color: #D4AF37; /* Dourado para o botão */
     border: none;
     padding: 15px 30px;
-    border-radius: 12px; /* Cantos levemente arredondados */
+    border-radius: 18px; /* Cantos levemente arredondados */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block; /* Para o botão se ajustar ao conteúdo */
@@ -81,7 +81,7 @@ nav {
 
     & button a {
     text-decoration: none;
-    color: #175B73; 
+    color: #f7f7f7; 
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 1.1em;
@@ -114,6 +114,7 @@ h2 {
 p {
     font-weight: 400;
     color: #5A5A5A;
+    font-size: 1em;
 }
 
 .descricao {
@@ -121,19 +122,12 @@ p {
     padding-top: 12px;
 }
 
-.descricao-branca {
-    color: #ffffff;
-    padding-bottom: 20px;
-    padding-top: 12px;
-}
 .descricao-foto {
     padding-bottom: 12px;
 }
 
-.background-azul {
-    background-color: #175B73;
-    
-}
+
+
 .card {
   background: #f7f5f0;
   border-radius: 12px;
@@ -150,6 +144,7 @@ p {
   
   & h3 {
     color: #175B73;
+    font-size: 1.2rem;
   }
   & button {
         background-color: #D4AF37;
@@ -204,7 +199,7 @@ h4 {
     color: #d4af37;
     text-align: left;
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
+    font-size: 1.2em;
     font-weight: 500;
     position: relative;
   }
