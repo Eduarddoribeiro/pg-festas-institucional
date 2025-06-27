@@ -223,12 +223,13 @@
     margin: 0 auto;
   }
   #quem-somos .descricao,
-#nossos-servicos .descricao-branca,
+#nossos-servicos .descricao,
 #portfolio .descricao {
   max-width: 900px;
-  margin: 0 auto 30px auto; /* essa linha é chave */
+  margin: 0 auto 30px auto;
   font-size: 1.1rem;
   text-align: center;
+  
 }
 #quem-somos .cards-container,
 #nossos-servicos .cards-container,
