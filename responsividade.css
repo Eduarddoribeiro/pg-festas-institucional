@@ -1,11 +1,48 @@
 /* ========== Media Queries ========== */
 @media (max-width: 768px) {
   header {
-    padding: 15px 30px;
+    padding: 35px 30px;
   }
+  section {
+  scroll-margin-top: 100px; /* ajuste conforme a altura real do seu header */
+}
 
   #brand-name {
     font-size: 1.2em;
+  }
+  nav {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #hamburger-menu {
+    display: flex; /* mostra hamburger no mobile */
+  }
+
+  #navbar {
+    display: none; /* esconde o menu no mobile por padrão */
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* logo abaixo do header */
+    right: 20px;
+    background: rgba(247, 245, 240, 0.95);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    width: 200px;
+  }
+
+  #navbar.active {
+    display: flex; /* mostra o menu quando ativo */
+  }
+
+  #navbar ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #navbar ul li {
+    text-align: right;
   }
 }
 
