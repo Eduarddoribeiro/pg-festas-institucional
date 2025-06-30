@@ -1,132 +1,158 @@
+/* RESET GLOBAL */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, #main-wrapper {
+  padding-bottom: 120px; /* espaço extra no final */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* TIPOGRAFIA E CORES GERAIS */
 body {
-    font-family: "Source Sans 3", sans-serif;
-    background-color: #f7f5f0;
-}
-
-header {
-    background-color: transparent;
-    padding: 15px 40px;
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    z-index: 1000; 
-}
-
-#brand-name {
-    font-family: "Poppins", sans-serif;
-    color: #ffffff; 
-    font-weight: 700;
-    font-size: 1.2em;
-    & span {
-        color: #175B73;
-    }
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 100px 40px 50px;
-    position: relative;
-    z-index: 1;
-
-    background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.7)),
-        url('assets/images/hero.webp');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-
-    
-    /* REMOVA OS PADDINGS ANTIGOS DAQUI SE ESTIVEREM CONFLITANDO */
-    /* E use os seguintes para controlar o espaçamento geral da seção Hero: */
-    padding: 0 40px; /* Padding lateral alinhado com o header */
-    padding-top: 100px; /* IMPORTANTE: Adiciona espaço no topo para o conteúdo do hero não ficar por trás do header */
-    padding-bottom: 50px; /* Adiciona um padding na parte de baixo para garantir que o conteúdo não fique "colado" no fundo */
-
-    position: relative;
-    z-index: 1;
-
-    & h1 {
-        font-family: "Poppins", sans-serif;
-        font-size: 2.1em;
-        margin-bottom: 25px;
-        text-align: left;
-        color: #ffffff;
-         text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-    }
-    & button {
-    background-color: #D4AF37; /* Dourado para o botão */
-    border: none;
-    padding: 15px 30px;
-    border-radius: 18px; /* Cantos levemente arredondados */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block; /* Para o botão se ajustar ao conteúdo */
-}
-
-    & button a {
-    text-decoration: none;
-    color: #f7f7f7; 
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 1.1em;
-    display: block; 
-}
-
-    & button:hover {
-    background-color: #e0b440; 
-    transform: translateY(-2px); 
-}
-}
-section {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 64px;
-    padding-top: 24px;
-    & img {
-        width: 100%;
-    }
+  font-family: "Source Sans 3", sans-serif;
+  background-color: #f7f5f0;
 }
 
 h2 {
-    font-family: "Poppins";
-    font-weight: 600;
-    color: #D4AF37;
-    
-
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #D4AF37;
 }
- 
+
+h4 {
+  padding-top: 10px;
+  color: #5C3A00;
+}
+
 p {
-    font-weight: 400;
-    color: #5A5A5A;
-    font-size: 1em;
+  font-weight: 400;
+  color: #5A5A5A;
+  font-size: 1em;
 }
 
 .descricao {
-    padding-bottom: 20px;
-    padding-top: 12px;
+  padding-bottom: 20px;
+  padding-top: 12px;
 }
 
 .descricao-foto {
-    padding-bottom: 12px;
+  padding-bottom: 12px;
+}
+
+/* HEADER */
+header {
+  background-color: rgba(247, 245, 240, 0.95); /* leve transparência para efeito elegante */
+  backdrop-filter: blur(6px); /* suaviza o fundo */
+  padding: 20px 60px;
+  position: fixed; /* melhor que absolute para menus fixos */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18); /* sombra leve para separação */
+  transition: all 0.3s ease; /* animações suaves em hover/menu fixo */
+}
+
+#brand-name {
+  font-family: "Poppins", sans-serif;
+  color: #D4AF37;
+  font-weight: 800;
+  font-size: 1.5em;
+  
+}
+
+#brand-name span {
+  color: #175B73;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
+/* HERO */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 40px 50px;
+  position: relative;
+  z-index: 1;
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.7)),
+    url('assets/images/hero.webp');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  padding-left: 40px;  /* alinhado com o header */
+  padding-right: 40px;
+  padding-top: 100px;  /* para não ficar atrás do header */
+  padding-bottom: 50px;
+  text-align: left;
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+#hero h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.1em;
+  margin-bottom: 25px;
+}
+
+#hero button {
+  background-color: #D4AF37; /* Dourado */
+  border: none;
+  padding: 15px 30px;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+#hero button a {
+  text-decoration: none;
+  color: #f7f7f7;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.1em;
+  display: block;
+}
+
+#hero button:hover {
+  background-color: #e0b440;
+  transform: translateY(-2px);
+}
+
+/* SEÇÕES */
+section {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 24px;
+  padding-bottom: 64px;
+}
+
+section img {
+  width: 100%;
+}
+
+/* CARDS */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 0;
+}
 
 .card {
   background: #f7f5f0;
@@ -136,51 +162,46 @@ p {
   flex-direction: column;
   gap: 10px;
   align-items: center;
-  justify-content: center;
-  height: 245px;
+  justify-content: flex-start;
+  height: auto;
   position: relative;
   box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  
-  & h3 {
-    color: #175B73;
-    font-size: 1.2rem;
-  }
-  & button {
-        background-color: #D4AF37;
-        border: none;
-        text-align: center;
-        border-radius: 12px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-        display: block; /* MUDE AQUI: De 'inline-block' para 'block' para ocupar 100% da largura disponível */
-        width: 100%; /* ADICIONE AQUI: Ocupa 100% da largura do seu pai (o cards-container, ou um div que o envolva) */
-        padding: 15px 30px; /* Mantém o padding do botão */
-    }
-
-    & button a {
-        text-decoration: none;
-        color: #ffffff; 
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        font-size: 1.1em;
-        display: block; 
-    }
+  text-align: center;
 }
 
-.cards-container {
-    display: flex; /* Transforma o contêiner em um Flexbox */
-    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
-    justify-content: center; /* Centraliza os cards no contêiner */
-    gap: 24px; /* <--- ADICIONE ESTE VALOR PARA AUMENTAR O ESPAÇO ENTRE OS CARDS */
-    padding: 0px 0; /* Padding vertical para espaçar dos títulos/textos da seção */
+.card h3 {
+  color: #175B73;
+  font-size: 1.2rem;
+}
 
-    
+.card button {
+  background-color: #D4AF37;
+  border: none;
+  text-align: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+  width: 100%;
+  padding: 15px 30px;
 }
-h4 {
-    padding-top: 10px;
-    color: #5C3A00;
+
+.card button a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.1em;
+  display: block;
 }
+
+.card button:hover {
+  background-color: #e0b440;
+  transform: translateY(-2px);
+}
+
+/* FORMULÁRIOS - card-trabalhe-conosco */
 .card-trabalhe-conosco {
   background: #f7f5f0;
   border-radius: 12px;
@@ -192,172 +213,162 @@ h4 {
   justify-content: flex-start;
   height: auto;
   position: relative;
-  
   overflow: hidden;
-
-  & h5 {
-    color: #5C3A00;
-    text-align: left;
-    font-family: "Poppins", sans-serif;
-    font-size: 1.2em;
-    font-weight: 500;
-    position: relative;
-  }
 }
 
-.card-trabalhe-conosco input { /* <-- ESTA É A MUDANÇA ESSENCIAL */
+.card-trabalhe-conosco h5 {
+  color: #5C3A00;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
+  position: relative;
+}
+
+.card-trabalhe-conosco input {
   background-color: #F7F5F0;
   text-align: left;
-  font-family: "Poppins", sans-serif; /* Ajustado de "Poppins-Medium" */
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  /* position: relative; (Removido, pois não é visível sem top/left/etc.) */
-
-  /* Adicione estes estilos comuns para inputs para um bom visual e usabilidade */
-  width: 100%; /* Para ocupar a largura total do pai */
-  padding: 10px; /* Espaçamento interno */
-  margin-bottom: 12px; /* Espaçamento entre os inputs */
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
-  border: 1px solid #cccccc33; /* Borda leve */
-  border-radius: 12px; /* Cantos arredondados */
-  box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
+  border: 1px solid #cccccc33;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.card-trabalhe-conosco select {
+  color: #5A5A5A;
+  background-color: #F7F5F0;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+  border: 1px solid #cccccc33;
+  border-radius: 12px;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333333%22%20d%3D%22M287%2C197.973L146.2%2C38.425L5.4%2C197.973H287z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
+
+.card-trabalhe-conosco select:focus {
+  outline: none;
+  border-color: #A0D0FF;
+  box-shadow: 0 0 0 2px rgba(160, 208, 255, 0.5);
+}
+
+.card-trabalhe-conosco select option[value=""] {
+  color: #888;
 }
 
 .btn-enviar {
-        background-color: #00BE65;
-        color: #ffffff;
-        border: none;
-        font-family: "Poppins";
-        text-align: center;
-        border-radius: 12px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-        display: block; /* MUDE AQUI: De 'inline-block' para 'block' para ocupar 100% da largura disponível */
-        width: 100%; /* ADICIONE AQUI: Ocupa 100% da largura do seu pai (o cards-container, ou um div que o envolva) */
-        padding: 15px 30px; /* Mantém o padding do botão */
-    }
-
-    .card-trabalhe-conosco select { /* Aplica o estilo ao select dentro do card */
-        color: #5A5A5A;
-    background-color: #F7F5F0;
-    text-align: left; /* O texto da opção selecionada alinhado à esquerda */
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 12px;
-    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
-    border: 1px solid #cccccc33;
-    border-radius: 12px;
-    box-sizing: border-box; /* Essencial para o padding e borda não estourarem a largura */
-
-    /* --- ESTILOS ESPECÍFICOS PARA O SELECT --- */
-    -webkit-appearance: none; /* Remove a seta padrão do Chrome/Safari */
-    -moz-appearance: none;    /* Remove a seta padrão do Firefox */
-    appearance: none;         /* Remove a seta padrão para outros navegadores */
-
-    /* Adiciona uma seta personalizada (opcional, mas recomendado para consistência) */
-    /* Você pode ajustar a cor do SVG para combinar com seu design */
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333333%22%20d%3D%22M287%2C197.973L146.2%2C38.425L5.4%2C197.973H287z%22%2F%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
-    background-position: right 10px center; /* Posição da seta */
-    background-size: 12px; /* Tamanho da seta */
-
-    /* Estilo para quando o select está em foco */
-    &:focus {
-        outline: none; /* Remove o contorno padrão do navegador */
-        border-color: #A0D0FF; /* Uma cor de destaque ao focar, similar a um input */
-        box-shadow: 0 0 0 2px rgba(160, 208, 255, 0.5); /* Sombra suave ao focar */
-    }
-
-    /* Estilo para a primeira opção (placeholder) */
-    & option[value=""] {
-        color: #888; /* Uma cor mais clara para o placeholder */
-    }
+  background-color: #00BE65;
+  color: #ffffff;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+  width: 100%;
+  padding: 15px 30px;
 }
 
+.btn-enviar:hover {
+  background-color: #00994f;
+  transform: translateY(-2px);
+}
+
+/* RODAPÉ */
 footer {
-    background-color: #f7f5f0; /* Usando seu azul principal como fundo */
-    color: #5A5A5A; /* Texto branco para contraste */
-    padding: 20px 20px 0 20px; /* Espaçamento interno: 50px no topo, 20px nas laterais, 0 embaixo (o footer-bottom cuidará disso) */
-    font-family: "Source Sans 3", sans-serif;
+  background-color: #f7f5f0;
+  color: #5A5A5A;
+  padding: 20px 20px 0 20px;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 #footer-content {
-    display: flex;
-    flex-direction: column; /* Em mobile, as seções ficam empilhadas */
-    gap: 40px; /* Espaço entre as seções */
-    text-align: center; /* Centraliza o texto em mobile */
-    margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .footer-section h4 {
-    font-family: "Poppins", sans-serif;
-    color: #5C3A00; /* Usando sua cor dourada para os títulos, como no resto do site */
-    font-size: 1.2em;
-    font-weight: 600;
-    margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+  color: #5C3A00;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
-/* Estilos para os links e parágrafos do rodapé */
-footer p, footer li {
-    margin-bottom: 10px;
+footer p,
+footer li {
+  margin-bottom: 10px;
 }
 
 footer a {
-    color: #5A5A5A;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: #5A5A5A;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
-    text-decoration: underline;
-    color: #5c3a00b7; /* Efeito hover dourado */
+  text-decoration: underline;
+  color: #5c3a00b7;
 }
 
-/* Ajustes na lista de navegação */
 .footer-links ul {
-    list-style: none; /* Remove os marcadores da lista */
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Ícones de Contato e Redes Sociais */
 .footer-section img {
-    width: 20px; /* Tamanho padrão para os ícones */
-    height: auto;
-    margin-right: 8px;
-    vertical-align: middle; /* Alinha o ícone com o texto */
+  width: 20px;
+  height: auto;
+  margin-right: 8px;
+  vertical-align: middle;
 }
 
 .social-icons {
-    display: flex;
-    justify-content: center; /* Centraliza os ícones em mobile */
-    gap: 20px; /* Espaço entre os ícones */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .social-icons a img {
-    width: 24px; /* Ícones sociais um pouco maiores */
-    transition: transform 0.2s ease;
+  width: 24px;
+  transition: transform 0.2s ease;
 }
 
 .social-icons a:hover img {
-    transform: scale(1.1); /* Efeito de zoom no hover */
+  transform: scale(1.1);
 }
 
-
-/*Copyright*/
+/* COPYRIGHT */
 #footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória sutil */
-    padding: 20px 0;
-    text-align: center;
-    font-size: 0.9em;
-    color: rgba(255, 255, 255, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 #footer-bottom p {
-    margin: 5px 0;
+  margin: 5px 0;
 }
-

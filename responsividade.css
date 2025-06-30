@@ -1,149 +1,243 @@
+/* ========== Media Queries ========== */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 30px;
+  }
 
-@media (min-width: 768px) {
-.container {
-        max-width: 720px;
-    }
-
-    #hero {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.7)),
-        url('assets/images/hero-tablet.webp'); 
-    }
-
-    #hero h1 {
-        font-size: 3.5em;
-    }
-
-
-    h2 {
-        font-size: 2.5em;
-    }
-
-    /* Layout dos cards para 2 colunas */
-    .card {
-        flex: 0 1 calc(50% - 12px); /* 0 para não crescer, 1 para encolher, e a base de largura */
-        max-width: none;
-    }
-
-    #footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-    }
-
-    .social-icons {
-        justify-content: flex-start;
-    }
-
-}
-
-@media (min-width: 992px) {
-    header {
-    padding: 15px 80px;
-    
-}
-#brand-name {
-    font-weight: 700;
-    font-size: 1.8em;
-    & span {
-        color: #175B73;
-    }
-}
-
-#hero {
-    padding-left: 80px;
-    padding-right: 180px;
-    align-items: flex-start;
-    background: linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.7)), url(assets/images/hero-tablet.webp) no-repeat center center/cover;
-
-    & h1 {
-        font-size: 3.8em;
-        margin-bottom: 25px;
-        text-align: left;
-        color: #ffffff;
-        
-    }
-    & button {
-    width: auto;
-    max-width: 400px;
-}
-
-    & button a {
-    font-size: 2.5em; 
-} }
-
-.card-foto img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
-}
-
-}
-
-@media (min-width: 1200px) {
-  #main-wrapper {
-    text-align: center;
-  } 
-  p {
+  #brand-name {
     font-size: 1.2em;
   }
-  #hero {
+}
+
+/* ======== A partir de 768px ======== */
+@media (min-width: 768px) {
+  
+   #navbar {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    gap: 32px;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  #navbar ul {
     display: flex;
-    flex-direction: column;      /* empilha h1 e botão */
-    justify-content: center;     /* centraliza verticalmente */
-    align-items: center;         /* centraliza horizontalmente */
-    height: 100vh;               /* ocupa toda altura da tela */
-    padding-left: 120px;
-    padding-right: 200px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.7)),
-      url(assets/images/hero-pc.webp);
-    background-size: cover;
-    background-position: center;
-    text-align: center;          /* texto centralizado */
+    gap: 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #navbar li a {
+    font-family: "Poppins", sans-serif;
+    color: #5C3A00;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  #navbar li a:hover {
+    color: #D4AF37;
+  }
+
+  #hamburger-menu {
+    display: none;
+  }
+
+  .container {
+    max-width: 720px;
+  }
+
+  #hero {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.7)),
+      url('assets/images/hero-tablet.webp');
   }
 
   #hero h1 {
-    max-width: 700px;           /* limita largura para não esticar demais */
-    font-size: 3em;           /* corrigi a unidade (sem -> em) */
-    margin-bottom: 20px;   
-    text-align: center;     /* espaço entre o título e o botão */
+    font-size: 3.5em;
   }
 
- #hero button {
-  padding: 25px 25px;       /* altura e largura internas do botão */
-     /* herda do link, evita conflito */
-   /* cor de fundo (exemplo) */
-  display: inline-block;
-  max-width: 450px;         /* já tinha no seu código */
-  height: auto;             /* remove altura fixa */
-  box-sizing: border-box;
-  transition: background-color 0.3s ease;
+  h2 {
+    font-size: 2.5em;
+  }
+
+  /* Layout dos cards para 2 colunas */
+  .card {
+    flex: 0 1 calc(50% - 12px);
+    max-width: none;
+  }
+
+  #footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+
+  .container-portfolio {
+    display: flex;
+    flex-wrap: nowrap;      /* impede quebra de linha */
+    overflow-x: auto;       /* rolagem horizontal se necessário */
+    gap: 24px;
+    padding: 0 20px;
+    max-width: 100%;
+  }
+
+  .card-foto {
+    flex: 0 0 auto;  /* largura fixa, não estica */
+    width: 280px;    /* ajuste a largura que quiser */
+  }
+}
+
+/* ======== A partir de 992px ======== */
+@media (min-width: 992px) {
+  section {
+  scroll-margin-top: 100px; /* ajuste conforme a altura real do seu header */
+}
+
+   header {
+    padding: 32px 80px; /* altura aumentada */
+  }
+
+  #brand-name {
+    font-weight: 700;
+    font-size: 1.8em;
+  }
+
+  #brand-name span {
+    color: #175B73;
+  }
+
+  #hero {
+    padding-left: 80px;
+    padding-right: 180px;
+    align-items: flex-start;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.075),
+      rgba(0, 0, 0, 0.7)
+    ), url('assets/images/hero-tablet.webp') no-repeat center center / cover;
+  }
+
+  #hero h1 {
+    font-size: 3.8em;
+    margin-bottom: 25px;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  #hero button {
+    width: auto;
+    max-width: 400px;
+  }
+
+  #hero button a {
+    font-size: 2.5em;
+  }
+
+  .card-foto img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+  }
+}
+
+/* ======== A partir de 1200px ======== */
+@media (min-width: 1200px) {
+
+  #main-wrapper {
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  #hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-left: 120px;
+    padding-right: 200px;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0.7)),
+      url('assets/images/hero-pc.webp');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+  }
+
+  #hero h1 {
+    max-width: 700px;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+#hero button {
+  padding: 12px 24px; /* menos “gordura” no padding */
+  border-radius: 16px; /* um pouco menos arredondado */
+  max-width: 300px; /* limitando a largura máxima */
+  font-weight: 600; /* um pouco mais forte, fica elegante */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #hero button a {
-  font-size: 2em;
-  padding: 0;          }
+  font-size: 1.8em; /* reduzido para ficar proporcional */
+  padding: 0;
+}
 
-.cards-container {
+  .cards-container {
     display: flex;
-    flex-wrap: nowrap; /* garante que fique tudo em uma linha só */
-    gap: 24px; /* espaçamento entre os cards */
-    justify-content: center; /* ou flex-start, se quiser alinhado à esquerda */
+    flex-wrap: nowrap;
+    gap: 24px;
+    justify-content: center;
   }
 
   .cards-container .card {
-    flex: 1 1 0; /* os cards vão crescer igualmente */
-     max-width: 100%;
-    min-height: 400px; 
+    flex: 1 1 0;
+    max-width: 100%;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px 20px 20px;
+    box-sizing: border-box;
+    text-align: center;
   }
-     #contato {
+
+  /* Ícones dentro dos cards */
+  .cards-container .card .icon-card {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ 
+
+  /* Botão "Saiba Mais" dentro do card */
+  .cards-container .card button {
+    margin-top: auto; /* empurra o botão para o fim do card */
+    padding: 12px 25px;
+  }
+
+  #contato {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 60px;
     text-align: left;
-    padding: 0px 80px;
+    padding: 0 80px;
   }
 
   #contato .descricao {
@@ -159,7 +253,7 @@
     background-color: #f7f5f0;
     padding: 30px 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
 
   .card-trabalhe-conosco input,
@@ -177,22 +271,22 @@
     width: 100%;
     transition: background-color 0.3s ease;
   }
-   #footer-content {
+
+  #footer-content {
     display: flex;
-    justify-content: space-between; /* distribui as seções igualmente */
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 40px; /* espaço entre as seções */
-    padding: 40px 80px; /* menos espaçamento que o padrão */
+    gap: 40px;
+    padding: 40px 80px;
     max-width: 1200px;
-    margin: 0 auto; /* centraliza horizontalmente */
+    margin: 0 auto;
   }
 
   #footer-content .footer-section {
     flex: 1 1 0;
-    min-width: 200px; /* garante largura mínima das colunas */
+    min-width: 200px;
   }
 
-  /* Ajusta títulos e listas para compactar um pouco */
   #footer-content h4 {
     margin-bottom: 15px;
     font-weight: 600;
@@ -222,22 +316,37 @@
     max-width: 1200px;
     margin: 0 auto;
   }
+
+  /* Descrições centrais e larguras máximas */
   #quem-somos .descricao,
-#nossos-servicos .descricao,
-#portfolio .descricao {
-  max-width: 900px;
-  margin: 0 auto 30px auto;
-  font-size: 1.1rem;
-  text-align: center;
-  
-}
-#quem-somos .cards-container,
-#nossos-servicos .cards-container,
-#portfolio .container-portfolio {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
+  #nossos-servicos .descricao,
+  #portfolio .descricao {
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1rem;
+    text-align: center;
+  }
 
+  #quem-somos .cards-container,
+  #nossos-servicos .cards-container,
+  #portfolio .container-portfolio {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
 
+  .container-portfolio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 32px;
+    padding: 0 80px;
+    max-width: 100%;
+  }
+
+  .card-foto {
+    flex: 0 0 auto;
+    width: 300px;
+  }
 }

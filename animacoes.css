@@ -1,0 +1,45 @@
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#hero h1 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+#hero h1.animate {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.card {
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* cards escondidos para cima e para baixo */
+.card.top-hidden {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.card.bottom-hidden {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* cards animados */
+.card.slide-in-top,
+.card.slide-in-bottom {
+  opacity: 1;
+  transform: translateY(0);
+}
