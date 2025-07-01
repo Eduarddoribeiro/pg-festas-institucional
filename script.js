@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 function isInViewport(el) {
   const rect = el.getBoundingClientRect();
   return rect.top < window.innerHeight && rect.bottom > 0;
@@ -38,17 +37,19 @@ function isInViewport(el) {
 
 const heroTitle = document.querySelector('#hero h1');
 const cards = document.querySelectorAll('.card');
+const portfolioCards = document.querySelectorAll('.card-foto'); // ⬅️ Novidade
 
 function checkAnimations() {
+  // Anima o título da seção hero
   if (isInViewport(heroTitle)) {
     heroTitle.classList.add('animate');
   } else {
     heroTitle.classList.remove('animate');
   }
 
+  // Anima os cards principais
   cards.forEach((card, index) => {
     if (isInViewport(card)) {
-      // alternar animação para cima e para baixo nos cards
       if (index % 2 === 0) {
         card.classList.add('slide-in-top');
         card.classList.remove('top-hidden');
@@ -66,6 +67,35 @@ function checkAnimations() {
       }
     }
   });
+
+  // cards
+  const portfolioCards = document.querySelectorAll('.card-foto');
+  portfolioCards.forEach((card, index) => {
+    if (isInViewport(card)) {
+      if (index % 2 === 0) {
+        card.classList.add('slide-in-left');
+        card.classList.remove('left-hidden');
+      } else {
+        card.classList.add('slide-in-right');
+        card.classList.remove('right-hidden');
+      }
+    } else {
+      if (index % 2 === 0) {
+        card.classList.remove('slide-in-left');
+        card.classList.add('left-hidden');
+      } else {
+        card.classList.remove('slide-in-right');
+        card.classList.add('right-hidden');
+      }
+    }
+  });
+  const cardTrabalhe = document.querySelector('.card-trabalhe-conosco');
+
+if (cardTrabalhe && isInViewport(cardTrabalhe)) {
+  cardTrabalhe.classList.add('fade-in');
+} else if (cardTrabalhe) {
+  cardTrabalhe.classList.remove('fade-in');
+}
 }
 
 window.addEventListener('load', checkAnimations);

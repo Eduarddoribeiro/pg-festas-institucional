@@ -43,3 +43,35 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+.card-foto {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Estado inicial escondido */
+.card-foto.left-hidden {
+  transform: translateX(-60px);
+}
+
+.card-foto.right-hidden {
+  transform: translateX(60px);
+}
+
+/* Quando entra na tela */
+.card-foto.slide-in-left,
+.card-foto.slide-in-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.card-trabalhe-conosco {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.card-trabalhe-conosco.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
