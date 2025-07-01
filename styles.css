@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html, body {
+  overflow-x: hidden;
+}
 body, #main-wrapper {
   padding-bottom: 120px; /* espaço extra no final */
 }
@@ -150,11 +153,6 @@ nav {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-
-  padding-left: 40px;  /* alinhado com o header */
-  padding-right: 40px;
-  padding-top: 100px;  /* para não ficar atrás do header */
-  padding-bottom: 50px;
   text-align: left;
   color: #ffffff;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
