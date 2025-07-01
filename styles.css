@@ -331,7 +331,7 @@ section img {
 }
 
 .btn-enviar {
-  background-color: #00BE65;
+  background-color: #bd940d;
   color: #ffffff;
   border: none;
   font-family: "Poppins", sans-serif;
@@ -345,8 +345,7 @@ section img {
 }
 
 .btn-enviar:hover {
-  background-color: #00994f;
-  transform: translateY(-2px);
+  background-color: #a07d0c;
 }
 
 /* RODAPÉ */

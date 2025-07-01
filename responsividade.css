@@ -61,6 +61,7 @@
 
   #navbar ul {
     display: flex;
+    flex-direction: row;
     gap: 32px;
     list-style: none;
     padding: 0;
@@ -189,6 +190,7 @@
 /* ======== A partir de 1200px ======== */
 @media (min-width: 1200px) {
 
+  
   #main-wrapper {
     text-align: center;
   }

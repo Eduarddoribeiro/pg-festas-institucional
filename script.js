@@ -6,7 +6,30 @@ document.addEventListener("DOMContentLoaded", function () {
     navbar.classList.toggle("active");
     hamburger.classList.toggle("active");
   });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth >= 768) {
+      navbar.classList.remove("active");
+      hamburger.classList.remove("active");
+    }
+  });
+
+  if (window.innerWidth >= 768) {
+    navbar.classList.remove("active");
+    hamburger.classList.remove("active");
+  }
+
+  // ✅ FECHA O MENU AO CLICAR EM UM LINK
+  const navLinks = document.querySelectorAll("#navbar a");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", function () {
+      navbar.classList.remove("active");
+      hamburger.classList.remove("active");
+    });
+  });
 });
+
 
 function isInViewport(el) {
   const rect = el.getBoundingClientRect();
